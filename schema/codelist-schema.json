@@ -1,0 +1,109 @@
+{
+    "$id": "https://codelist-schema.opendataservices.coop/1__0__0/codelist-schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Codelist schema",
+    "description": "A schema for documenting codelists in CSV format.",
+    "type": "array",
+    "items": {
+      "$ref": "#/$defs/Row"
+    },
+    "$defs": {
+      "Row": {
+        "title": "Row",
+        "type": "object",
+        "required": [
+          "Code",
+          "Title",
+          "Description"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "Code": {
+            "title": "Code",
+            "description": "The value to use in data. Codes should match the letter case of external codes (e.g. ISO 4217, JSON Schema, GeoJSON, IANA Media Types) and should be camel case, otherwise.",
+            "type": "string",
+            "pattern": "^(([a-z]+|oc4ids)([A-Z][a-z]+|EU|GPP)*(\\.[a-z]+([A-Z][a-z]+)*)?|[A-Z]+[0-9]?|[A-Z]{2}(-[A-Z]+)+|TED(_[A-Z]+)+|(eu|fsr)(-[a-z]+)+|date-time|LineString|Point|Polygon|MultiLineString|MultiPoint|MultiPolygon|(offline|application|audio|font|example|image|message|model|multipart|text|video)/[\\w.+-]+|pre-award)$"
+          },
+          "Title": {
+            "title": "Title",
+            "description": "A short title for the code.",
+            "type": "string",
+            "minLength": 1
+          },
+          "Description": {
+            "title": "Description",
+            "description": "A longer description of the code.",
+            "type": "string",
+            "minLength": 1
+          },
+          "Deprecated": {
+            "title": "Deprecated",
+            "description": "The minor version (or patch version under 0.x) in which the code was deprecated.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^(\\d+\\.\\d+|0\\.\\d+\\.\\d+)$"
+          },
+          "Deprecation note": {
+            "title": "Deprecation note",
+            "description": "The reason for the deprecation, and any guidance.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "Business Logic": {
+            "title": "Business Logic",
+            "description": "A description of how this field's value relates to the values of other fields.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "Category": {
+            "title": "Category",
+            "description": "A single category by which to filter codes. The standard's documentation should explain the categorization system.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "Notes": {
+            "title": "Notes",
+            "description": "Notes on the application of the code.",
+            "type": "string",
+            "pattern": "^milestone/type = [A-Za-z]+$"
+          },
+          "Source": {
+            "title": "Source",
+            "description": "The third-party source for the code.",
+            "oneOf": [
+              {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              }
+            ]
+          },
+          "Valid Until": {
+            "title": "Valid Until",
+            "description": "The date past which the code is no longer valid for use.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^(\\d{4}/\\d{4}|\\d{4}-\\d{2}(/\\d{4}-\\d{2})?)$"
+          }
+        },
+        "minProperties": 1
+      }
+    },
+    "minItems": 1,
+    "uniqueItems": true
+  }

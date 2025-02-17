@@ -1,18 +1,15 @@
-Open Data Services Sphinx Base
-==============================
+# Open Data Services Codelist Schema
 
-The base Sphinx setup (myst-parser + internationalisation + Open Data Services maintained extensions) for Open Data Services docs projects.
+A schema for documenting codelists in CSV format.
 
+This page presents the schema as a table. You can also [download it as JSON Schema](../schema/codelist-schema.json).
 
-```{eval-rst}
+```{tip}
+To reference the codelist schema, use its canonical URI:
 
-.. toctree::
-   :titlesonly:
-   :maxdepth: 2
-   :caption: Table of Contents
+[`http://codelist-schema.opendataservices.coop/1__0__0/codelist-schema.json`](http://codelist-schema.opendataservices.coop/1__0__0/codelist-schema.json)
+```
 
-   features
-   examples/index
-   kitchen-sink/index
-
+```{jsonschema} ../schema/codelist-schema.json
+:pointer: /$defs/Row
 ```
