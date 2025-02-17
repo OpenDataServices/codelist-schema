@@ -13,3 +13,7 @@ To reference the codelist schema, use its canonical URI:
 ```{jsonschema} ../schema/codelist-schema.json
 :pointer: /$defs/Row
 ```
+
+## Appreciation
+
+The codelist schema is based on the codelist schema developed by the [Open Contracting Partnership](https://www.open-contracting.org/) for the [Open Contracting Data Standard](https://standard.open-contracting.org/).
