@@ -1,5 +1,5 @@
 {
-    "$id": "https://codelist-schema.opendataservices.coop/1__0__0/codelist-schema.json",
+    "$id": "https://codelist-schema.readthedocs.io/1__0__0/codelist-schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Codelist schema",
     "description": "A schema for documenting codelists in CSV format.",

@@ -2,7 +2,7 @@
 
 A schema for documenting codelists in CSV format.
 
-If you are viewing this on GitHub, open the [full documentation](https://codelist-schema.opendataservices.coop) for additional details.
+If you are viewing this on GitHub, open the [full documentation](https://codelist-schema.readthedocs.io/) for additional details.
 
 ## Maintenance
 
